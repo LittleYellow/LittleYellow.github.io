@@ -1,3 +1,42 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseURL = "https://LittleYellow.github.io/"
+languageCode = "zh-tw"
+defaultContentLanguage = "zh-tw"
+title = "Dev Notes"
+theme = "hermit"
+hasCJKLanguage = true
+rssLimit = 20
+enableEmoji = true
+pygmentsCodefences = true
+pygmentsUseClasses = true
+
+[author]
+  name = "Developer"
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+
+  homeSubtitle = "記錄開發路上的坑與頓悟"
+  themeColor   = "#494f5c"
+  relatedPosts = true
+  code_copy_button = true
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/"
+
+[menu]
+  [[menu.main]]
+    name   = "文章"
+    url    = "posts/"
+    weight = 10
+
+  [[menu.main]]
+    name   = "關於"
+    url    = "about/"
+    weight = 20
