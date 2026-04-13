@@ -12,6 +12,9 @@ pygmentsUseClasses = true
 [author]
   name = "Developer"
 
+[params.author]
+  name = "Developer"
+
 [taxonomies]
   tag = "tags"
 
