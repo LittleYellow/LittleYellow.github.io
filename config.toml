@@ -2,36 +2,19 @@ baseURL = "https://littleyellow.github.io/"
 languageCode = "zh-tw"
 defaultContentLanguage = "zh-tw"
 title = "Dev Notes"
-theme = "hermit"
+theme = "ananke"
 hasCJKLanguage = true
-rssLimit = 20
 enableEmoji = true
-pygmentsCodefences = true
-pygmentsUseClasses = true
 
 [author]
   name = "Developer"
 
-[params.author]
-  name = "Developer"
+[params]
+  description = "記錄開發路上的坑與頓悟"
+  github = "https://github.com/LittleYellow"
 
 [taxonomies]
   tag = "tags"
-
-[params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
-  dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04"
-
-  homeSubtitle = "記錄開發路上的坑與頓悟"
-  themeColor   = "#494f5c"
-  relatedPosts = true
-  code_copy_button = true
-
-  [[params.social]]
-    name = "github"
-    url  = "https://github.com/"
 
 [menu]
   [[menu.main]]
