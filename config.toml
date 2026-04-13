@@ -1,4 +1,4 @@
-baseURL = "https://LittleYellow.github.io/"
+baseURL = "https://littleyellow.github.io/"
 languageCode = "zh-tw"
 defaultContentLanguage = "zh-tw"
 title = "Dev Notes"
