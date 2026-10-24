@@ -13,7 +13,9 @@ const links = [{url:'/posts/',label:'所有文章'},{url:'/enterprise-ai/',label
   <head>
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title><meta name="description" content={description} />
-    <meta name="theme-color" content="#fff9ee" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#fff9ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1d2025" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="icon" type="image/png" href="/favicon.png" />

@@ -32,7 +32,7 @@ category 可為「企業 AI」「工程筆記」「值班日常」；order 越�
 ## 品牌與素材
 
 主要色：蜂蜜黃 #E8B455、炭灰 #34383F、奶油白 #FFF1D6。
-網站底色 #FFF9EE。角色沿用 Q 版工程柴：厚黑圓框眼鏡、半瞇眼、炭灰連帽衣。
+網站透過 prefers-color-scheme 自動跟隨系統明暗模式；亮色底 #FFF9EE，深色底 #1D2025、卡片 #262A30、文字 #F4ECDC。工程柴、文章插圖與分享圖保留原色。角色沿用 Q 版工程柴：厚黑圓框眼鏡、半瞇眼、炭灰連帽衣。
 `public/images/shiba.webp` 為網站主圖；頭像及分享圖皆衍生自同一素材。
 產圖來源與完整 prompt：`docs/mascot-generation.md`。
 社群網址確認前只提供既有 GitHub 與 RSS，沒有虛構 FB 或 Threads 帳號。
