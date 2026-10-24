@@ -11,7 +11,7 @@ const posts = await publishedPosts();
     <h1>嘴上吐槽，<br/><span class="highlight">手上解題。</span></h1>
     <p class="hero-deck">把 AI 帶進工作，<br class="mobile-only"/>也把問題想清楚。</p>
     <p class="hero-desc">我是小黃。一隻關心企業 AI、工程實務，<br class="desktop-only"/>還有能不能準時下班的工程柴。</p>
-    <div class="hero-actions"><a class="button primary" href="/enterprise-ai/">從企業 AI 開始讀 <span>↗</span></a><a class="text-link" href="/posts/">逛逛所有文章 <span>→</span></a></div>
+    <div class="hero-actions"><a class="button primary" href="/posts/">閱讀文章分享 <span>↗</span></a></div>
   </div>
   <div class="hero-visual">
     <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
@@ -22,14 +22,8 @@ const posts = await publishedPosts();
     <span class="hand-note">有點累，但問題還是要解。</span>
   </div>
 </section>
-<div class="topic-strip"><div class="wrap"><span>這裡聊什麼</span><a href="/enterprise-ai/">企業 AI 落地 <b>↗</b></a><span class="strip-star">✳</span><a href="/posts/?category=工程筆記">工程師的解題筆記 <b>↗</b></a><span class="strip-star">✳</span><a href="/posts/?category=值班日常">值班與職場日常 <b>↗</b></a></div></div>
 <section class="section wrap">
-  <div class="section-heading"><div><span class="eyebrow">THE LATEST / 最近在想</span><h2>新鮮出爐的值班筆記<span class="yellow-period">。</span></h2></div><a class="text-link" href="/posts/">所有文章 <span>↗</span></a></div>
+  <div class="section-heading"><div><span class="eyebrow">THE LATEST / 最近在想</span><h2>最近的文章分享<span class="yellow-period">。</span></h2></div><a class="text-link" href="/posts/">查看全部 <span>↗</span></a></div>
   <div class="post-grid">{posts.slice(0,3).map((post,index) => <PostCard post={post} index={index} />)}</div>
 </section>
-<section class="guide-feature wrap">
-  <div class="guide-intro"><span class="eyebrow">START HERE / 企業 AI 主題導讀</span><h2>做得出來，<br/>然後呢？</h2><p>從「AI 好像可以」走到「團隊真的能用」，<br/>中間還有資料、驗證與維運。</p><a class="button yellow" href="/enterprise-ai/">打開企業 AI 導讀 <span>↗</span></a></div>
-  <div class="guide-path">{[{n:'01',title:'先找對問題',text:'釐清情境，才知道 AI 要幫什麼忙。'},{n:'02',title:'小範圍試，認真驗證',text:'把資料、權限與驗收一起放進計畫。'},{n:'03',title:'讓它能交接，也能維運',text:'有人負責、有跡可循，才能走得長久。'}].map(step=><a href={'/enterprise-ai/#step-' + step.n}><span>{step.n}</span><div><h3>{step.title}</h3><p>{step.text}</p></div><b>↗</b></a>)}</div>
-</section>
-<section class="about-teaser wrap"><span class="eyebrow">BEHIND THE GLASSES</span><h2>眼鏡後面，是個喜歡把問題拆開的人。</h2><p>用工程師的視角，寫給每一個想讓工作變好一點的人。<br/>有實作、有反思，也有一點上班族的冷幽默。</p><a class="text-link" href="/about/">認識小黃 <span>↗</span></a></section>
 </Base>

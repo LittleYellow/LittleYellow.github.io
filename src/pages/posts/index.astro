@@ -5,8 +5,8 @@ import { publishedPosts } from '../../lib/posts';
 const posts = await publishedPosts();
 const categories = ['全部', '企業 AI', '工程筆記', '值班日常'];
 ---
-<Base title="所有文章" description="企業 AI、工程實務與值班日常。找到你現在用得上的一篇筆記。">
-  <section class="page-heading wrap"><span class="eyebrow">FIELD NOTES / 值班筆記</span><h1>把踩過的坑，<br/>寫成下一步。</h1><p>企業 AI、工程實務，以及工作裡那些值得想清楚的小事。</p></section>
+<Base title="文章分享" description="企業 AI、工程實務與值班日常。找到你現在用得上的一篇筆記。">
+  <section class="page-heading wrap"><span class="eyebrow">ARTICLES / 文章分享</span><h1>文章分享</h1><p>聊聊心得、概念與說明，把工作裡值得想清楚的事寫下來。</p></section>
   <section class="wrap posts-section">
     <form class="search-bar" role="search"><label for="search">找一篇筆記</label><input id="search" type="search" placeholder="搜尋標題、主題或關鍵字…" autocomplete="off" /><button type="reset" class="text-link">清除</button></form>
     <div class="filter-row" role="group" aria-label="文章分類">{categories.map((category,index)=><button class="filter" data-category={category} aria-pressed={index===0?'true':'false'}>{category} <span>{index===0 ? posts.length : posts.filter(p=>p.data.category===category).length}</span></button>)}</div>

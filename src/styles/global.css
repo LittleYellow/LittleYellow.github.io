@@ -56,3 +56,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline-color: var(
 .flow-art .selected { background: var(--honey); }
 .tiny-dot { background: #6b8050; border-color: #fffdf8; }
 }
+
+/* A single content destination keeps navigation compact at every size. */
+.site-header nav { margin-left: auto; }
+@media (max-width: 800px) { .site-header nav { order: 0; width: auto; justify-content: flex-end; } .header-rss { margin-left: 0; } }
+@media (max-width: 540px) { .site-header nav { order: 3; width: 100%; justify-content: flex-start; } .header-rss { margin-left: auto; } }

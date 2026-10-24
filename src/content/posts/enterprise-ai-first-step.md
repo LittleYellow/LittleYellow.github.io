@@ -53,4 +53,4 @@ order: 1
 
 這不是要讓試作變得很重，而是避免大家各自想像一套不同的需求。
 
-下一步可以接著看 [AI 變更的驗收方式](/posts/verify-the-whole-change/)，或回到 [企業 AI 導讀](/enterprise-ai/) 按順序閱讀。
+下一步可以接著看 [AI 變更的驗收方式](/posts/verify-the-whole-change/)，或到 [文章分享](/posts/) 找找其他主題。

@@ -6,7 +6,7 @@ const name = '小黃｜黃柴值班中';
 const fullTitle = title ? title + ' — ' + name : name + '・把 AI 帶進真實工作';
 const path = Astro.url.pathname;
 const canonical = new URL(path, Astro.site);
-const links = [{url:'/posts/',label:'所有文章'},{url:'/enterprise-ai/',label:'企業 AI 導讀'},{url:'/about/',label:'關於小黃'}];
+const links = [{url:'/posts/',label:'文章分享'}];
 ---
 <!doctype html>
 <html lang="zh-Hant-TW">
@@ -39,7 +39,7 @@ const links = [{url:'/posts/',label:'所有文章'},{url:'/enterprise-ai/',label
     <main id="main"><slot /></main>
     <footer class="site-footer wrap">
       <div><a class="footer-brand" href="/">小黃<span>｜黃柴值班中</span></a><p>嘴上吐槽，手上解題。明天繼續值班。</p></div>
-      <div class="footer-links"><a href="/posts/">所有文章</a><a href="/about/">關於小黃</a><a href="https://github.com/LittleYellow">GitHub ↗</a><a href="/rss.xml">RSS ↗</a></div>
+      <div class="footer-links"><a href="/posts/">文章分享</a><a href="/about/">關於小黃</a><a href="https://github.com/LittleYellow">GitHub ↗</a><a href="/rss.xml">RSS ↗</a></div>
       <div class="footer-bottom"><span>© {new Date().getFullYear()} Little Yellow</span><span>慢慢理解，好好實作。 <i class="status-dot" aria-hidden="true"></i></span></div>
     </footer>
   </body>
