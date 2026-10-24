@@ -1,0 +1,48 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { publishedPosts } from '../../lib/posts';
+const posts = await publishedPosts();
+const categories = ['全部', '企業 AI', '工程筆記', '值班日常'];
+---
+<Base title="所有文章" description="企業 AI、工程實務與值班日常。找到你現在用得上的一篇筆記。">
+  <section class="page-heading wrap"><span class="eyebrow">FIELD NOTES / 值班筆記</span><h1>把踩過的坑，<br/>寫成下一步。</h1><p>企業 AI、工程實務，以及工作裡那些值得想清楚的小事。</p></section>
+  <section class="wrap posts-section">
+    <form class="search-bar" role="search"><label for="search">找一篇筆記</label><input id="search" type="search" placeholder="搜尋標題、主題或關鍵字…" autocomplete="off" /><button type="reset" class="text-link">清除</button></form>
+    <div class="filter-row" role="group" aria-label="文章分類">{categories.map((category,index)=><button class="filter" data-category={category} aria-pressed={index===0?'true':'false'}>{category} <span>{index===0 ? posts.length : posts.filter(p=>p.data.category===category).length}</span></button>)}</div>
+    <p id="result-count" class="result-count" aria-live="polite">共 {posts.length} 篇筆記</p>
+    <div class="post-grid" id="post-list">{posts.map((post,index)=><div data-post data-category={post.data.category} data-search={[post.data.title,post.data.description,...post.data.tags].join(' ').toLowerCase()}><PostCard post={post} index={index}/></div>)}</div>
+    <div id="empty-state" class="empty-state" hidden><h2>這個關鍵字，工程柴還沒寫到。</h2><p>換個字試試，或清除搜尋看看所有筆記。</p></div>
+    <noscript><p>目前顯示所有文章。啟用 JavaScript 後可使用搜尋與分類。</p></noscript>
+  </section>
+</Base>
+<script>
+const input = document.querySelector<HTMLInputElement>('#search')!;
+const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-category].filter')];
+const cards = [...document.querySelectorAll<HTMLElement>('[data-post]')];
+let selected = new URLSearchParams(location.search).get('category') || '全部';
+if (!buttons.some(b => b.dataset.category === selected)) selected = '全部';
+input.value = new URLSearchParams(location.search).get('q') || '';
+function filter(updateUrl = true) {
+  const query = input.value.trim().toLowerCase();
+  let count = 0;
+  cards.forEach(card => {
+    const match = (selected === '全部' || card.dataset.category === selected) && (card.dataset.search || '').includes(query);
+    card.hidden = !match; if (match) count++;
+  });
+  buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.category === selected)));
+  document.querySelector('#result-count')!.textContent = '共 ' + count + ' 篇筆記';
+  (document.querySelector('#empty-state') as HTMLElement).hidden = count > 0;
+  if (updateUrl) {
+    const params = new URLSearchParams();
+    if (selected !== '全部') params.set('category', selected);
+    if (query) params.set('q', input.value.trim());
+    history.replaceState(null, '', location.pathname + (params.size ? '?' + params.toString() : ''));
+  }
+}
+buttons.forEach(b => b.addEventListener('click', () => { selected = b.dataset.category!; filter(); }));
+input.addEventListener('input', () => filter());
+document.querySelector('form')!.addEventListener('submit', e => e.preventDefault());
+document.querySelector('form')!.addEventListener('reset', () => { input.value = ''; selected = '全部'; filter(); });
+filter(false);
+</script>

@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+const steps = [
+{n:'01',title:'先找對問題',subtitle:'從工作情境開始，不急著選工具。',text:'選一個範圍明確、重複發生，而且能判斷好壞的工作。先記錄目前的做法與時間，再想 AI 可以接手哪一段。',questions:['誰會使用？現在最麻煩的是哪一步？','結果怎樣才算有用？誰來判斷？','不使用 AI，有沒有更簡單的解法？'],href:'/posts/enterprise-ai-first-step/',link:'企業 AI 的第一步：先把問題說清楚'},
+{n:'02',title:'小範圍試，認真驗證',subtitle:'能跑一次，和可以交給團隊，是兩件事。',text:'用有限的資料與權限做試作。準備成功、失敗與邊界情境，讓驗收有依據，也讓錯誤可以被看見。',questions:['測試會不會影響真實資料或對外發送？','出錯時會怎麼處理？誰會收到通知？','原本的功能、權限與紀錄還在嗎？'],href:'/posts/verify-the-whole-change/',link:'AI 說改好了，驗收還要看什麼？'},
+{n:'03',title:'讓它能交接，也能維運',subtitle:'工具上線之後，才是長期合作的開始。',text:'把用途、限制、操作方式與負責人留下來。讓接手的人知道正常長什麼樣、異常去哪裡看，以及什麼時候應該停下來。',questions:['出了問題，哪個人負責決定下一步？','能否回到上一個可用版本？','換一個同事，能不能照著紀錄繼續做？'],href:'/posts/write-for-the-next-shift/',link:'把筆記寫給下一個值班的人'}
+];
+---
+<Base title="企業 AI 主題導讀" description="從個人做得出來，到企業用得起來。用三個階段理解 AI 的情境、驗證與維運。">
+<section class="page-heading wrap guide-heading"><span class="eyebrow">A PRACTICAL GUIDE / 企業 AI 導讀</span><h1>從個人做得出來，<br/>到企業<span class="highlight">用得起來。</span></h1><p>不用先懂每個技術名詞。跟著工作裡的問題，<br/>一步一步把 AI 放進真正能運作的流程。</p><a class="button primary" href="#step-01">開始閱讀 <span>↓</span></a></section>
+<div class="guide-summary wrap"><span>閱讀路線</span><a href="#step-01">01 找對問題</a><span>→</span><a href="#step-02">02 試作驗證</a><span>→</span><a href="#step-03">03 交接維運</a></div>
+<section class="wrap guide-steps">{steps.map(step=><article id={'step-'+step.n} class="guide-step"><span class="step-number">{step.n}</span><div><span class="eyebrow">STEP {step.n}</span><h2>{step.title}</h2><p class="step-subtitle">{step.subtitle}</p><p>{step.text}</p><div class="question-box"><h3>先問自己三件事</h3><ul>{step.questions.map(q=><li>{q}</li>)}</ul></div><a class="text-link" href={step.href}>{step.link} <span>↗</span></a></div></article>)}</section>
+<section class="guide-outro wrap"><h2>先帶走一個問題就好。</h2><p>挑一項你想改善的工作，寫下「現在怎麼做、哪裡卡住、怎麼判斷變好」。<br/>這就是一個可以開始的 AI 計畫。</p><a class="button primary" href="/posts/">繼續看值班筆記 ↗</a></section>
+</Base>
